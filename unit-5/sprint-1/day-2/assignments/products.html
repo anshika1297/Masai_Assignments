@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    <div id="parent">
+
+    </div>
+</body>
+</html>
+<script>
+var ProductData= JSON.parse(localStorage.getItem("products")) || [];
+console.log(ProductData);
+products();
+
+function products(){
+   
+    
+    ProductData.map(function(elem, index)
+    {
+        var div=document.createElement("div");
+
+        var img=document.createElement("img");
+        img.setAttribute("src",elem.image);
+        img.setAttribute("alt",elem.name);
+
+        var price=document.createElement("h5");
+        price.textContent=elem.price;
+
+        var costBox=document.createElement("div");
+        var name=document.createElement("p");
+        name.textContent=elem.name;
+        
+        var category=document.createElement("p");
+        category.setAttribute("id","category");
+        category.textContent=elem.category;
+
+        var gender=document.createElement("p");
+        gender.setAttribute("id","gender");
+        gender.textContent=elem.gender;
+
+        var butns=document.createElement("div");
+        
+        var btn=document.createElement("button");
+        btn.setAttribute("id","soldbtn");
+        btn.innerHTML="sold"
+        if(elem.sold=="true"){
+            btn.style.backgroundColor = "red";
+        }
+        else
+        {
+            btn.style.backgroundColor = "green";
+        }
+        btn.addEventListener("click",function(){
+            solditem(index);
+        });
+
+        var btn2=document.createElement("button");
+        btn2.textContent="Delete";
+        btn2.addEventListener("click",function (){
+            deleteproduct(index);
+        });
+
+
+        costBox.append(name,category,gender);
+        butns.append(btn,btn2);
+        div.append(img,price,costBox,butns);
+        document.getElementById("parent").append(div);
+    });
+}
+
+function deleteproduct(index){
+        var remove=ProductData.splice(index,1);
+        localStorage.setItem("products", JSON.stringify(ProductData));
+        document.querySelector("#parent").textContent="";
+        products();
+    }
+
+    function solditem(index){
+       if(ProductData[index].sold=="true")
+       {
+        ProductData[index].sold="false";
+        document.getElementById("soldbtn").style.backgroundColor = "green";
+
+       }
+       else{
+        ProductData[index].sold="true";
+        document.getElementById("soldbtn").style.backgroundColor = "red";
+            
+       }
+       localStorage.setItem("products", JSON.stringify(ProductData));
+    }
+</script>

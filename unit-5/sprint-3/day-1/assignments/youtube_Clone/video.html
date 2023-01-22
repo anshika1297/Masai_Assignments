@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video</title>
+</head>
+<body onload="video()">
+    <h1>video</h1>
+    <iframe 
+    id="ytube-iframe"
+    width="853" 
+    height="480"  
+    title="youtube media player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen></iframe>
+    
+</body>
+</html>
+<script>
+   
+    let video=()=>{
+        
+    let data=JSON.parse(localStorage.getItem("video"))
+    console.log(data);
+    let iframe=document.getElementById("ytube-iframe");
+    console.log(`https://www.youtube.com/embed/${data.id.videoId}`);
+    iframe.src=`https://www.youtube.com/embed/${data.id.videoId}`;
+    }
+</script>

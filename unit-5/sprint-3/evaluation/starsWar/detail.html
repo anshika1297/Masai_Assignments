@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+
+        <link rel="stylesheet" href="styles/detail.css">
+
+</head>
+<body>    
+    <div id="container">
+        <h1 id="char_name"></h1>
+         <!-- update the text content in span elements don't change the id names-->
+        <div id="info">
+            <div id="info1">
+                <!-- update the text content in span elements dont change the id names-->
+                <h2>Personal Info</h2>
+                <p>Birth Year: <span id="birthyear"></span></p>
+                <p>Gender: <span id="gender"></span></p>
+                <p>Height: <span id="height"></span></p>                
+            </div>
+            <div id="info2">
+                <h2>Anatomy</h2>
+                 <!-- update the text content in span elements dont change the id names-->
+                <p>Eye: <span id="eyecolor"></span></p>
+                <p>Mass: <span id="mass"></span></p>
+                <p>Hair Color: <span id="haircolor"></span></p>                
+            </div>
+        </div>
+    <button onclick="goback()">Go Back</button>
+    </div>
+
+
+</body>
+
+<Script src="src/scripts/detail.js" ></Script>
+</html>

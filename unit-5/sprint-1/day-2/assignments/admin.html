@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce I </title>
+</head>
+<body>
+    <a href="products.html">ProductPage</a>
+    <form>
+        <input type="text" id="name" Placeholder="Enter Product Name"/>
+        <input type="text" id="category" Placeholder="Enter Product Category"/>
+        <input type="text" id="image" Placeholder="Enter Product Image Url"/>
+        <input type="text" id="price" Placeholder="Enter Product Price"/>
+        <select id="gender" >
+            <option value="male">Male</option>
+            <option value="Female">FeMale</option>
+        </select>
+        <select id="sold">
+            <option value="false"></option>
+            <option value="true">Sold</option>
+            </select>
+          <input type="submit" value="Add Product" id="add"/>
+    </form>
+</body>
+</html>
+
+<script>
+    document.querySelector("form").addEventListener("submit",addproduct);
+   function productDetail(name,category,image,price,gender,sold){
+       this.name=name;
+       this.category=category;
+       this.image=image;
+       this.price=price;
+       this.gender=gender;
+       this.sold=sold;
+   };
+
+   var ProductData= JSON.parse(localStorage.getItem("products")) || [];
+    function addproduct(){
+        event.preventDefault();
+        
+        let name=document.getElementById("name").value;
+        let category=document.getElementById("category").value;
+        let image=document.getElementById("image").value;
+        let price=document.getElementById("price").value;
+        let gender=document.getElementById("gender").value;
+        let sold=document.getElementById("sold").value;
+
+         var obj=new productDetail(name,category,image,price,gender,sold);
+         console.log(obj);
+        ProductData.push(obj);
+
+        localStorage.setItem("products",JSON.stringify(ProductData));
+    }
+</script>

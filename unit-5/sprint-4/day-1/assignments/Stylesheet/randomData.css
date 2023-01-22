@@ -1,0 +1,14 @@
+#parent_div>div>img{
+    width:200px;
+    height:200px;
+}
+#parent_div>div{
+    display:flex;
+}
+#parent_div{
+    padding:20px;
+}
+
+#parent_div>div>div{
+    margin-top:-0px;
+}

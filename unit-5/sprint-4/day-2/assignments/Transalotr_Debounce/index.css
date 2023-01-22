@@ -1,0 +1,33 @@
+header{
+    height:50px;
+    background-color: lemonchiffon;
+    font-size: 40px;
+    font-weight: 900;
+     color:brown;
+     text-align: center;
+    
+}
+#container{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+padding:50px;
+gap:20px;
+margin:50px;
+}
+
+select{
+    border: none;
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: underline;
+    width:70px;
+}
+label{
+    font-size: 18px; 
+}
+#totext, #fromtext{
+    margin-top:30px;
+    width:400px;
+    height:250px;
+    background-color:gainsboro;
+}

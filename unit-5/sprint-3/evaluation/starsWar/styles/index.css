@@ -1,0 +1,43 @@
+body{
+    background-color:black;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+
+h1{
+ color:gold;
+ text-align: center;
+ font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;;
+font-weight: bolder;
+font-size:70px;
+margin-top:200px;
+}
+
+#container{
+    margin-left:400px
+}
+
+input{
+    height:50px;
+    width:600px;
+    border-radius: 10px 10px;
+    background-color:rgb(37, 38, 39);
+    font-size: 20px;
+    border:none;
+    
+}
+#midcontainer{
+    background-color:rgb(37, 38, 39);
+    width:604px;
+    margin-left:400px;
+    margin-top:-20px;
+
+}
+#midcontainer div{
+    padding:0px 30px;
+    padding-top:5px;
+    color:white;
+}
+#gender{
+margin-left:480px;
+margin-top:-35px
+}

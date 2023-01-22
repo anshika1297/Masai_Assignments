@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>Roll the dice</title>
+        <style>
+            div{
+                font-size: 20px;
+                font-weight: bolder;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="winner">
+
+        </div>
+        <div id="member-1"></div>
+        <div id="member-2"></div>
+        <div id="member-3"></div>
+        <button id="roll">ROLL THE DICE</button>
+    </body>
+</html>
+<script>
+    document.getElementById("roll").addEventListener("click", DiceWinner);
+
+    function DiceWinner(){
+        var one=Math.floor(Math.random() * 7);
+        var two=Math.floor(Math.random() * 7);
+        var three=Math.floor(Math.random() * 7);
+
+        document.getElementById("member-1").textContent=one;
+        document.getElementById("member-2").textContent=two;
+        document.getElementById("member-3").textContent=three;
+
+        if(one>two && one>three)
+        {   document.getElementById("winner").textContent="Member A";
+            document.getElementById("member-1").style.color = "green";
+            if(two>three)
+            {
+                document.getElementById("member-2").style.color = "yellow";
+                document.getElementById("member-3").style.color = "red";
+            }
+            else if(two===three)
+            {
+                document.getElementById("member-2").style.color = "blue";
+                document.getElementById("member-3").style.color = "blue";
+            }
+            else{
+                document.getElementById("member-2").style.color = "red";
+                document.getElementById("member-3").style.color = "yellow";
+            }
+        }
+        else if(two>one && two>three){
+            document.getElementById("winner").textContent="Member B";
+            document.getElementById("member-2").style.color = "green";
+            if(one>three)
+            {
+                document.getElementById("member-1").style.color = "yellow";
+                document.getElementById("member-3").style.color = "red";
+            }
+            else if(one===three)
+            {
+                document.getElementById("member-1").style.color = "blue";
+                document.getElementById("member-3").style.color = "blue";
+            }
+            else{
+                document.getElementById("member-1").style.color = "red";
+                document.getElementById("member-3").style.color = "yellow";
+            }
+        }
+        else if(three>one && three>two)
+        {
+            document.getElementById("winner").textContent="Member C";
+            document.getElementById("member-3").style.color = "green";
+            if(one>two)
+            {
+                document.getElementById("member-1").style.color = "yellow";
+                document.getElementById("member-2").style.color = "red";
+            }
+            else if(one===two)
+            {
+                document.getElementById("member-1").style.color = "blue";
+                document.getElementById("member-2").style.color = "blue";
+            }
+            else{
+                document.getElementById("member-1").style.color = "red";
+                document.getElementById("member-2").style.color = "yellow";
+            }
+        }
+
+
+    }
+</script>
