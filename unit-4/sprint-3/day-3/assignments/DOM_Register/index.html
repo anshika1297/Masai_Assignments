@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration</title>
+  </head>
+  <body>
+    <input type="text" name="name" id="name" value=""/>
+    <select id="gender">
+      <option value="">--</option>
+      <option value="male">M</option>
+      <option value="female">F</option>
+    </select>
+    <input type="text" name="email" id="email" value=""/>
+    <input type="text" name="mobile" id="mobile" value=""/>
+    <hr />
+    <h1 id="dName">NAME</h1>
+    <h2 id="dGender">GENDER</h2>
+    <h3 id="dEmail">EMAIL</h3>
+    <h4 id="dMobile">MOBILE</h4>
+    <hr />
+    <button id="name-btn" onclick="showName()">NAME</button>
+    <button id="gender-btn" onclick="showGender()">GENDER</button>
+    <button id="email-btn" onclick="showEmail()">EMAIL</button>
+    <button id="mobile-btn" onclick="showMobile()">MOBILE</button>
+    <button id="resetForm-btn" onclick="resetForm()">RESET FORM</button>
+    <button id="resetText-btn" onclick="resetDisplay()">RESET DISPLAY</button>
+    <script type="text/javascript">
+      function showName() {
+        var n= document.getElementById("name").value;
+        document.getElementById("dName").textContent=n;
+      }
+
+      function showGender() {
+        var n= document.getElementById("gender").value;
+        document.getElementById("dGender").textContent=n;
+      }
+
+      function showEmail() {
+        var n= document.getElementById("email").value;
+        document.getElementById("dEmail").textContent=n;
+      }
+
+      function showMobile() {
+        var n= document.getElementById("mobile").value;
+        document.getElementById("dMobile").textContent=n;
+      }
+
+      function resetForm() {
+        document.getElementById("name").value="";
+        document.getElementById("gender").value="";
+        document.getElementById("email").value="";
+        document.getElementById("mobile").value="";
+      }
+
+      function resetDisplay() {
+        document.getElementById("dName").textContent="";
+        document.getElementById("dEmail").textContent="";
+        document.getElementById("dGender").textContent="";
+        document.getElementById("dMobile").textContent="git";
+      }
+    </script>
+  </body>
+</html>

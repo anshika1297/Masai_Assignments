@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Masai Doctor Records</title>
+  </head>
+  <body>
+    <!-- Use this form for data input  -->
+    <form>
+      <input placeholder="Name" type="text" id="name" value="" />
+      <input placeholder="Doctor ID" type="text" id="doctor_id" value=""  />
+      <select id="specialization">
+        <option value="">Select Specialization</option>
+        <option value="Dermatologist">Dermatologist</option>
+        <option value="Dentist">Dentist</option>
+        <option value="Gynecologist">Gynecologist</option>
+      </select>
+      <input placeholder="Experience" type="number" id="experience" value="" />
+      <input placeholder="Email" type="email" id="email" value="" />
+      <input placeholder="Mobile No." type="number" id="mobile" value="" />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <!-- Use this Select tag for filter part  -->
+    <select id="filter">
+      <option value="">Select Specialization</option>
+      <option value="Dermatologist">Dermatologist</option>
+      <option value="Dentist">Dentist</option>
+      <option value="Gynecologist">Gynecologist</option>
+    </select>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Doctor ID</th>
+          <th>Specialization</th>
+          <th>Experience in Years</th>
+          <th>Email</th>
+          <th>Mobile No</th>
+          <th>Role</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Append Rows here using JS & DOM  -->
+      </tbody>
+    </table>
+  </body>
+  
+  <script>
+document.querySelector("form").addEventListener("submit",doctors);
+function doctors()
+{
+  event.preventDefault();
+  var Dname=document.getElementById("name").value;
+  var DID=document.getElementById("doctor_id").value;
+  var Dspec=document.getElementById("specialization").value;
+  var Dexp=document.getElementById("experience").value;
+  var Demail=document.getElementById("email").value;
+  var Dmob=document.getElementById("mobile").value;
+
+var tr= document.createElement("tr");
+var td1=document.createElement("td");
+td1.textContent=Dname;
+
+var td2=document.createElement("td");
+td2.textContent=DID;
+
+var td3=document.createElement("td");
+td3.textContent=Dspec;
+
+var td4=document.createElement("td");
+td4.textContent=Dexp;
+
+var td5=document.createElement("td");
+td5.textContent=Demail;
+
+var td6=document.createElement("td");
+td6.textContent=Dmob;
+var td7=document.createElement("td");
+
+if(Dexp>5)
+{
+  td7.textContent="Senior";
+}
+else if(Dexp<=1){
+  td7.textContent="Trainee";
+}
+else if(2<=Dexp<=5)
+{
+  td7.textContent="Junior";
+}
+
+var td8=document.createElement("td");
+td8.textContent="Delete";
+td8.addEventListener("click",deleteEntry);
+
+tr.append(td1,td2,td3,td4,td5,td6,td7,td8);
+document.querySelector("tbody").append(tr);
+}
+
+function deleteEntry(){
+  event.target.parentNode.remove();
+}
+
+  </script>
+</html>

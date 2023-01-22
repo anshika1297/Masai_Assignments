@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create Form</title>
+    <style>
+      .container
+      {
+        display:flex;
+      }
+      .table{
+                  width:40%;
+                 margin:auto;
+                 margin-top:50px;
+                  height:550px;
+                  border-radius: 10px;
+                  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                  
+                
+            }
+            h1{
+              text-align:center;
+            }
+
+            input{
+              width:400px;
+              height:50px;
+              margin-top:20px;
+              margin-left:60px;
+              box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+            }
+            ::placeholder
+            {
+              font-size: 40px;
+              font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            .button
+            {
+              text-align: center;
+              font-size: 30px;
+              font-weight:bold;
+            }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="table">
+        <h1>Signup Form</h1>
+        <form>
+        <input type="text" placeholder="Name" >
+        <input type="email" placeholder="Email Address">
+        <input type="text" placeholder="Country">
+        <input type="number" placeholder="Phone">
+        <input type="password" placeholder="Password">
+        <input type="submit" value="Create Account" class="button">
+      </form>
+    </div>
+    <div class="table">
+      <h1>Signin Form</h1>
+      <form>
+      <input type="text" placeholder="Name" >
+        <input type="email" placeholder="Email Address">
+        <input type="password" placeholder="Password">
+        <input type="submit" value="Signin" class="button">
+      </form>
+    </div>
+    </div>
+  </body>
+</html>

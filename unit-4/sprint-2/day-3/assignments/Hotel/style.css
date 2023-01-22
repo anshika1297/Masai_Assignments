@@ -1,0 +1,38 @@
+h1{
+font-size: 60px;
+color:#c78b36;
+text-align: center;
+}
+.des{
+line-height: 25px;
+margin-top: -20px;
+text-align: center;
+}
+#container
+{
+    display: flex;
+    width:80%;
+    margin-left:150px;
+    margin-top: 40px;
+    
+}
+.banner
+{
+    width: 340px;
+    height: 600px;
+    margin-left:13px;
+    
+}
+img{
+    width: 340px;
+    height: 230px;
+}
+h2
+{
+    text-align: center;
+}
+.price
+{
+    color:coral;
+    text-align: center;
+}

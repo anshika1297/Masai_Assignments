@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Page</title>
+    <style>
+        #main{
+            width:500px;
+           
+            margin:auto;
+            justify-content: center;
+            
+        }
+        input{
+            margin:10px 50px;
+        }
+    </style>
+
+    </head>
+    <body>
+
+        
+<div id="main">
+    <h3>Total Amount to be Paid:<span id="bill"></span></h3>
+    <h4>Enter Card Details</h4>
+    <form>
+        <input type="number" id="cardNo" placeholder="Enter Your Card Number" value=""/><br>
+        <input type="number" id="CVV" placeholder="Enter the CVV" value=""/><br>
+        <input type="date" id="date" placeholder="Enter the Expiry Date" value=""/><br>
+        <input type="text" id="name" placeholder="Enter Name of Card Holder" value=""/><br>
+        <input type="submit" value="Send OTP" />
+    </form>
+    
+    
+</div>
+    </body>
+    </html>
+    <script>
+var cardData = [
+    {
+      cardNo:"567891234567",
+      CVV: "411",
+      
+    },
+    {
+      cardNo:"123456756789",
+      CVV: "414",
+      
+    },
+    {
+      cardNo:"567456789123",
+      CVV: "431",
+      
+    },
+    {
+      cardNo:"567823456791",
+      CVV: "141",
+      
+    },
+]
+   document.querySelector("form").addEventListener("submit",GetOtp);
+
+   function GetOtp(){
+    event.preventDefault();
+    var card=document.getElementById("cardNo").value;
+    var cvv=document.getElementById("CVV").value;
+    var flag=0;
+    cardData.map(function(elem)
+    {
+        
+        if(elem.cardNo==card)
+        { 
+            if(elem.CVV==cvv)
+            {  
+                flag==1;
+                var otp=document.createElement("input");
+                otp.setAttribute("type","number");
+                otp.setAttribute("id","otp");
+                otp.setAttribute("value","");
+
+                var btn=document.createElement("button");
+                btn.addEventListener("click",placeOrder);
+
+                document.querySelector("form").innerHtml="";
+                document.querySelector("form").append(otp,btn);
+
+            }
+
+            
+        }
+        
+    });
+    if(flag==0)
+    {
+    document.querySelector("h4").innerHTML="Enter Correct Card Details";
+    }
+   }
+
+   function placeOrder(){
+    var otp=document.getElementById("otp").value;
+    if(otp==1234){
+        alert("payment successful");
+    }
+    else{
+        alert("Enter Correct OTP");
+    }
+   }
+   </script>

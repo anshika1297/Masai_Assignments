@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <input type="number" id="number1" value="">
+    <input type="number" id="number2" value="">
+    <button id="add">Add</button>
+    <button id="substract">Substract</button>
+    <button id="multiply">Multiply</button>
+    <button id="devide">Devide</button>
+  </body>
+  <script>
+    document.getElementById("add").addEventListener("click", Add);
+    document.getElementById("substract").addEventListener("click", Sub);
+    document.getElementById("multiply").addEventListener("click", Mul);
+    document.getElementById("devide").addEventListener("click", Dev);
+
+    function Add(){
+      var one=parseInt(document.getElementById("number1").value);
+      var two=parseInt(document.getElementById("number2").value);
+      alert(one+two);
+    }
+
+    function Sub(){
+      var one=parseInt(document.getElementById("number1").value);
+      var two=parseInt(document.getElementById("number2").value);
+      alert(one-two);
+    }
+
+    function Mul(){
+      var one=parseInt(document.getElementById("number1").value);
+      var two=parseInt(document.getElementById("number2").value);
+      alert(one*two);
+    }
+
+    function Dev(){
+      var one=parseInt(document.getElementById("number1").value);
+      var two=parseInt(document.getElementById("number2").value);
+      alert(one/two);
+    }
+  </script>
+</html>

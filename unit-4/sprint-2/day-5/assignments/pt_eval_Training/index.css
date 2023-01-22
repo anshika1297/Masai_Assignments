@@ -1,0 +1,187 @@
+*{
+      text-align: center;
+}
+body{
+      background-color: white;
+}
+header p{
+      width:10em;
+      display:inline-block;
+      line-break:auto;
+}
+
+#teachers{  
+display: grid;
+grid-template-columns: repeat(4,1fr);
+/* grid-template-rows: repeat(1,110%); */
+gap:15px;
+width:80%;
+margin:auto;
+justify-content: center;
+}
+#teachers div{
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#teachers div img{
+      width:92%;
+      height:200px;
+}
+#teachers div h6{
+      margin-top:-2.5%;
+      
+}
+
+#teachers div p{
+      margin-top:-4.5%;
+}
+#courses{
+      
+      display: grid;
+      grid-template-columns: repeat(3,24%);
+      /* grid-template-rows: repeat(2,50%); */
+      column-gap:2%;
+      justify-content: center;
+      margin-top:6%
+}
+
+
+#courses div{
+      display:flex;
+      flex-flow:wrap;
+}
+
+#courses div img{
+      width:23%;
+      height:150px;
+      margin-top:3%;
+}
+
+#courses div h2{
+ margin-left:7%;
+ margin-top:3%
+}
+
+#courses div p{
+      margin-left:30%;
+      text-align: left;
+      margin-top:-100px;;
+}
+/* medium screens */
+@media all and (min-width: 421px) and (max-width: 720px) 
+      {
+            #teachers{
+      
+            display: grid;
+            grid-template-columns: repeat(2,45%);
+            /* grid-template-rows: repeat(2,110%); */
+            column-gap:1.7% ;
+            justify-content: center;
+            }
+
+            #teachers div{
+                  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            }
+            #teachers div img{
+                  width:92%;
+                  height:200px;
+            }
+            #teachers div h6{
+                  margin-top:-2.5%;
+                  
+            }
+            
+            #teachers div p{
+                  margin-top:-4.5%;
+            }
+
+            #courses{
+      
+            display: grid;
+            grid-template-columns: repeat(2,45%);
+            /* grid-template-rows: repeat(3,50%); */
+            column-gap:2%;
+            justify-content: center;
+            margin-top:6%
+            }
+
+            #courses div{
+                  display:flex;
+                  flex-flow:wrap;
+            }
+            
+            #courses div img{
+                  width:23%;
+                  height: 150px;;
+                  margin-top:7%;
+            }
+            
+            #courses div h2{
+             margin-left:7%;
+             margin-top:3%
+            }
+            
+            #courses div p{
+                  margin-left:30%;
+                  text-align: left;
+                  margin-top:-40%;
+            }
+      }
+
+
+/* small screens */
+@media all and (min-width: 0px) and (max-width: 420px) {
+            #teachers{
+      
+                  display: grid;
+                  grid-template-columns: repeat(1,90%);
+                  /* grid-template-rows: repeat(4,110%); */
+                  column-gap:1.7% 1.7%;
+                  justify-content: center;
+      }
+      #teachers div{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      #teachers div img{
+            width:92%;
+            height:200px;
+      }
+      #teachers div h6{
+            margin-top:-2.5%;
+            
+      }
+      
+      #teachers div p{
+            margin-top:-4.5%;
+      }
+      #courses{
+      
+            display: grid;
+            grid-template-columns: repeat(1,90%);
+            /* grid-template-rows: repeat(6,50%); */
+            column-gap:2% 2%;
+            justify-content: center;
+            margin-top:6%
+            }
+
+            #courses div{
+                  display:flex;
+                  flex-flow:wrap;
+            }
+            
+            #courses div img{
+                  width:23%;
+                  height:150px;
+                  margin-top:7%;
+            }
+            
+            #courses div h2{
+             margin-left:7%;
+             margin-top:3%
+            }
+            
+            #courses div p{
+                  margin-left:30%;
+                  text-align: left;
+                  margin-top:-40%;
+            }
+      }

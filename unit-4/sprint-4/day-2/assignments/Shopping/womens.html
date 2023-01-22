@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Womens </title>
+    <style>
+        #parent {
+            padding: 10px;
+            margin:80px;
+            margin-top:20px;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap:15px;
+            text-align: center;
+        }
+       #parent>div{
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+        }
+
+       #parent>div>div{
+         display: flex;
+         margin-left:70px;
+         margin-top:-30px;
+        }
+
+        button{
+            padding-top:-10px;
+            background-color: teal;
+            color:white;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;;
+        }
+        #cost{
+            text-decoration: line-through;
+            margin-left:100px;
+        }
+
+      
+        img{
+            height:220px;
+            width:90%;
+        }
+
+#nav{
+    margin-top: 50px;
+    text-align: center;
+    padding:20px;
+}
+
+#nav>button{
+    width:120px;
+    height:40px;
+    margin: 0px 40px;
+    font-size: 20px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <div id="nav"> <button><a href="mens.html">Men</a></button>
+        <button><a href="womens.html">Women</a></button>
+        <button><a href="MyCart.html">My Cart</a></button>
+    </div>
+    <div id="parent">
+
+    </div>
+</body>
+</html>
+<script>
+
+var womensData = [
+    {
+      image_url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7stLaWNjEgU4YC6IqqEN6zP3mhBhyGn5sXg&usqp=CAU",
+      name: "WOMEN'S REEBOK PRINT LEGGINGS ",
+      price: 1549,
+      strikedoffprice: 1799,
+      qty:1,
+    },
+    {
+      image_url:
+        "data:image/jpeg;base64,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",
+      name: "WOMEN'S REEBOK POLYTIGHT",
+      price: 1249,
+      strikedoffprice: 1749,
+      qty:1,
+    },
+    {
+      image_url:
+        "data:image/jpeg;base64,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",
+      name: "WOMEN'S REEBOK SLEEVE TEE",
+      price: 699,
+      strikedoffprice: 1245,
+      qty:1,
+    },
+    {
+      image_url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH4vYFRSmjNoh0gCr_nJKUZF9x5N4nJ7IoDg&usqp=CAU",
+      name: "WOMEN'S REEBOK PP TIGHTS",
+      price: 749,
+      strikedoffprice: 1299,
+      qty:1,
+    },
+    {
+      image_url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWiB_dbb2ZDzkGzf3mM3gF6sLQQd9f_ew_Pg&usqp=CAU",
+      name: "WOMEN'S REEBOK PP TIGHTS",
+      price: 749,
+      strikedoffprice: 1299,
+      qty:1,
+    },
+    {
+      image_url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2Of9Im7TfMwWHJ2OsOL91eJa6Wr-4WTmF0Q&usqp=CAU",
+      name: "WOMEN'S REEBOK CLASSIC LEGGINGS",
+      price: 1399,
+      strikedoffprice: 2799,
+      qty:1,
+    },
+    {
+      image_url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXcroz6lukf3qOBjltTyjJ-IgnZrntmvJQuQ&usqp=CAU",
+      name: "WOMEN'S REEBOK CLASSIC TIGHTS",
+      price: 1099,
+      strikedoffprice: 1249,
+      qty:1,
+    },
+    {
+      image_url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnE6tIvH03vLc6chdQ7F3XFG9-5vSrYfJu5Q&usqp=CAU",
+      name: "UNISEX REEBOK SHOW SHOES",
+      price: 1249,
+      strikedoffprice: 1489,
+      qty:1,
+    },
+    {
+      image_url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN04zsls5l5os4V8PfjpqyrQfUV1B73GGw-w&usqp=CAU",
+      name: "WOMEN'S CLASSIC REEBOK PANTS",
+      price: 1459,
+      strikedoffprice: 1235,
+      qty:1,
+    },
+    {
+      image_url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvhDOy5Z7BLCclgtOldLFLPz6Fm6PZHTWF2Q&usqp=CAU",
+      name: "WOMEN'S REEBOK RUNNING RUN ESSENTIALS SHORT SLEEVE GRAPHIC",
+      price: 849,
+      strikedoffprice: 2599,
+      qty:1,
+    },
+    {
+      image_url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4Bzh9IYZWvtP17_c37zSE5-yndw4FmkaXjQ&usqp=CAU",
+      name: "WOMEN'S REEBOK TRAINING WOR MESH TIGHTS",
+      price: 1550,
+      strikedoffprice: 2599,
+      qty:1,
+    },
+    {
+      image_url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-589saWcOFsYPfbwqhllTl8Kb7CTLSkbcNQ&usqp=CAU",
+      name: "WOMEN'S REEBOK RUNNING OSR HIGH-IMPACT BRA",
+      price: 1399,
+      strikedoffprice: 6599,
+      qty:1,
+    },
+    {
+      image_url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhX9vMI5TjRILuGoPPiC9BP1AJWf-3X7cRww&usqp=CAU",
+      name: "UNISEX REEBOK TRAINING ACTIVE CORE BACKPACK - MEDIUM",
+      price: 949,
+      strikedoffprice: 1899,
+      qty:1,
+    },
+    {
+      image_url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaurZGMC5_b9xS4UkDh7uUC93XYqhZzr5NDA&usqp=CAU",
+      name: "WOMEN'S REEBOK PRINT LEGGINGS ",
+      price: 1549,
+      strikedoffprice: 1799,
+      qty:1,
+    },
+    {
+      image_url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThUl1Hb9-X5Y0t6iu25eSl0DuzlkuieXWnLw&usqp=CAU",
+      name: "WOMEN'S REEBOK POLYTIGHT",
+      price: 1249,
+      strikedoffprice: 1749,
+      qty:1,
+    },
+    {
+      image_url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4Bzh9IYZWvtP17_c37zSE5-yndw4FmkaXjQ&usqp=CAU",
+      name: "WOMEN'S REEBOK SLEEVE TEE",
+      price: 699,
+      strikedoffprice: 1245,
+      qty:1,
+    },
+    {
+      image_url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYdrGAMJ-BVn2VNawcsjHuBwfDTmHCppU0CQ&usqp=CAU",
+      name: "WOMEN'S REEBOK PP TIGHTS",
+      price: 749,
+      strikedoffprice: 1299,
+      qty:1,
+    },
+    {
+      image_url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBi7VD1rl92Qc3pK_4OJTWiALgdrKbWERkEg&usqp=CAU",
+      name: "WOMEN'S REEBOK PP TIGHTS",
+      price: 749,
+      strikedoffprice: 1299,
+      qty:1,
+    },
+    {
+      image_url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCJRacwHFBDtRKDTd-d-nMglAWxO1pcNlgQQ&usqp=CAU",
+      name: "WOMEN'S REEBOK CLASSIC LEGGINGS",
+      price: 1399,
+      strikedoffprice: 2799,
+      qty:1,
+    },
+    {
+      image_url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ14UBW-By-pTghyrfj8AVHKA_qH70z2E2ckQ&usqp=CAU",
+      name: "WOMEN'S REEBOK CLASSIC TIGHTS",
+      price: 1099,
+      strikedoffprice: 1249,
+      qty:1,
+    },
+    {
+      image_url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRHOB0Y5QRuQofqc_68Lv5z4pjvg6-atfzjg&usqp=CAU",
+      name: "UNISEX REEBOK SHOW SHOES",
+      price: 1249,
+      strikedoffprice: 1489,
+      qty:1,
+    },
+    {
+      image_url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrfXFbTOaLVpn_4DBPpfh3dk3y38s8b1x28w&usqp=CAU",
+      name: "WOMEN'S CLASSIC REEBOK PANTS",
+      price: 1459,
+      strikedoffprice: 1235,
+      qty:1,
+    },
+    {
+      image_url:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5zJbKx4qjHA2JascT6MWa_vI726SgqzubiA&usqp=CAU",
+      name: "WOMEN'S REEBOK RUNNING RUN ESSENTIALS SHORT SLEEVE GRAPHIC",
+      price: 849,
+      strikedoffprice: 2599,
+      qty:1,
+    }
+  ];
+    
+products();
+
+function products(){
+    womensData.map(function(elem)
+    {
+        var div=document.createElement("div");
+
+        var img=document.createElement("img");
+        img.setAttribute("src",elem.image_url);
+        img.setAttribute("alt",elem.name);
+
+        var name=document.createElement("h5");
+        name.textContent=elem.name;
+
+        var costBox=document.createElement("div");
+        var price=document.createElement("p");
+        price.textContent=elem.price;
+        
+        var cost=document.createElement("p");
+        cost.setAttribute("id","cost");
+        cost.textContent=elem.strikedoffprice;
+
+        var btn=document.createElement("button");
+        btn.innerHTML="Add To Cart"
+        btn.addEventListener("click",function(){
+            addCart(elem);
+        });
+
+        costBox.append(price,cost);
+        div.append(img,name,costBox,btn);
+
+        document.getElementById("parent").append(div);
+    });
+}
+
+var cart=JSON.parse(localStorage.getItem("cart"))||[];
+
+function addCart(product){
+    var flag=0;
+    cart.map(function(elem)
+    {
+        if(elem.name===product.name)
+        {
+            elem.qty++;
+            flag++;
+        }
+    });
+if(flag===0){
+    cart.push(product);
+}
+alert("item added to the Cart");
+localStorage.setItem("cart", JSON.stringify(cart));
+alert("item added to the Cart");
+}
+</script>

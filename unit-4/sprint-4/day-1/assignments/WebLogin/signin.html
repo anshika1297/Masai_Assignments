@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in Page</title>
+  </head>
+  <body>
+    <div class="nav">
+      <a href="./index.html">Signup</a>
+      <a href="./signin.html">Signin</a>
+    </div>
+    <div id="signin">
+      <h1 id="heading">Please Enter Your Details</h1>
+      <form>
+        <input type="email" id="email" />
+        <input type="password" id="password" />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+  <script>
+    document.querySelector("form").addEventListener("submit",login);
+  var userData=JSON.parse(localStorage.getItem("account-data"))||[];
+  function login(){
+    event.preventDefault();
+    var email= document.getElementById("email").value;
+    var password= document.getElementById("password").value;
+    var flag=0;
+    userData.map(function(elem, index)
+    {
+      if(elem.email==email)
+      {
+        if(elem.password==password)
+        {
+          document.getElementById("heading").textContent="Sign in Successful";
+          flag++;
+          document.getElementById("email").value="";
+          document.getElementById("password").value="";
+          return;
+        }
+        else{
+          document.getElementById("heading").textContent="Wrong Credentials";
+          document.getElementById("email").value="";
+          document.getElementById("password").value="";
+        }
+      }
+  });
+
+  if(flag===0)
+  {
+    document.getElementById("heading").textContent="Wrong Credentials";
+    document.getElementById("email").value="";
+    document.getElementById("password").value="";
+  }
+}
+  </script>
+</html>

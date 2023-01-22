@@ -1,0 +1,18 @@
+table{
+    width:900px;
+   text-align: center;
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+
+table tr th{
+    background-color: gold;
+    font-size:20px;
+}
+
+
+
+tr{
+    height:30px;
+    
+}

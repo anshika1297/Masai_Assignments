@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Dashboard</title>
+    <style>
+      form{
+        display:grid;
+        width:400px;
+        height:200px;
+      }
+      table{
+    width:800px;
+}
+thead{
+    background-color: darkorange;
+    font-weight:bold;
+    font-size:15px;
+    width:auto;
+
+}
+tbody{
+    width:auto;
+    text-align: center;
+}
+.delete{
+  background-color: red;
+}
+
+</style>
+  
+  </head>
+  <body>
+    <div id="create">
+      <h1>Hire a new Employee</h1>
+      <form>
+        <input placeholder="Employee Name" id="name" value="" type="text" />
+        <select id="job">
+          <option value="">Select Job Role</option>
+          <option value="SDE-1">SDE-1</option>
+          <option value="SDE-2">SDE-2</option>
+          <option value="HR Manager">HR Manager</option>
+          <option value="SEO Specialist">SEO Specialist</option>
+          <option value="CA">CA</option>
+        </select>
+        <select id="department">
+          <option value="">Select Department</option>
+          <option value="Engineering">Engineering</option>
+          <option value="HR">HR</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Finance">Finance</option>
+        </select>
+        <input type="number" id="salary" value="" placeholder="Monthly salary" />
+        <input
+          type="number"
+          id="experience"
+          placeholder="Prev Work Experience in Years"
+        />
+        <input placeholder="Contact Email" value="" id="email" type="email" />
+        <input type="submit" value="Hire" />
+      </form>
+    </div>
+    <h1>Total Active Employee:- <span id="total-employee">0</span></h1>
+    <h1>Total Cost in Salary:- <span id="total-salary">0</span></h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Employee Name</th>
+          <th>Job Role</th>
+          <th>Department</th>
+          <th>salary</th>
+          <th>Contact Email</th>
+          <th>Work Experience</th>
+          <th>Role Type</th>
+          <th>Fire Employee</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Append all the rows here  -->
+      </tbody>
+    </table>
+  </body>
+
+  <script>
+document.querySelector("form").addEventListener("submit",Employee);
+var count=0;
+var totalSalary=0;
+
+function Employee(){
+    event.preventDefault();
+    var name= document.getElementById("name").value;
+    var role= document.getElementById("job").value;
+    var dept= document.getElementById("department").value;
+    var sal= parseInt(document.getElementById("salary").value);
+    var exp= document.getElementById("experience").value;
+    var contact= document.getElementById("email").value;
+
+    if(name=="" ||role=="" ||dept=="" ||sal=="" ||exp=="" ||contact=="")
+    {
+      alert("Fill all input fields");
+    }
+    else
+    {
+      count++;
+    totalSalary=totalSalary+sal;
+
+    document.getElementById("total-employee").textContent=count;
+    document.getElementById("total-salary").textContent=totalSalary;
+    
+    var tr= document.createElement("tr");
+    var td1= document.createElement("td");
+    td1.textContent=name;
+    var td2= document.createElement("td");
+    td2.textContent=role;
+    var td3= document.createElement("td");
+    td3.textContent=dept;
+    var td4= document.createElement("td");
+    td4.textContent=sal;
+   
+
+    var td5= document.createElement("td");
+    td5.textContent=exp;
+    var td6= document.createElement("td");
+    td6.textContent=contact;
+
+    var td7= document.createElement("td");
+
+    if(exp>5)
+    td7.textContent="Senior";
+    else
+    td7.textContent="Junior";
+
+    var td8= document.createElement("td");
+    td8.setAttribute("class","delete")
+    td8.textContent="Delete";
+    td8.setAttribute("class","delete")
+
+    td8.addEventListener("click",FireEmplyee);
+
+    tr.append(td1,td2,td3,td4,td5,td6,td7,td8);
+    document.querySelector("tbody").append(tr);
+    }
+    
+  }
+
+    function FireEmplyee(){
+      count=count-1;
+      document.getElementById("total-employee").textContent=count;
+      
+      event.target.parentNode.remove();
+    
+    }
+  </script>
+</html>
